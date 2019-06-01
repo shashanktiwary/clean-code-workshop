@@ -24,9 +24,7 @@ public class Customer {
   }
 
   public String htmlStatement() {
-    String result = new HtmlStatement(name, rentals).statement();
-
-    return result;
+      return new HtmlStatement(name, rentals).statement();
   }
 
 

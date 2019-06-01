@@ -10,21 +10,19 @@ class TextStatement {
   }
 
   public String statement() {
-    double totalAmount = 0;
-    int frequentRenterPoints = 0;
+    // add header lines show name of the customer
     String result = "Rental Record for " + name + "\n";
+
     for (Rental rental : rentals) {
       result += "\t" + rental.getMovie().getTitle() + "\t" +
           String.valueOf(rental.amount()) + "\n";
     }
 
-    frequentRenterPoints = rentals.totalFrequentRenterPoints();
-    totalAmount = rentals.totalAmount();
-
     //add footer lines result
-    result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-    result += "You earned " + String.valueOf(frequentRenterPoints)
+    result += "Amount owed is " + String.valueOf(rentals.totalAmount()) + "\n";
+    result += "You earned " + String.valueOf(rentals.totalFrequentRenterPoints())
         + " frequent renter points";
+
     return result;
   }
 
