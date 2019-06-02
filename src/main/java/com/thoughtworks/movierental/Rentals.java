@@ -8,7 +8,7 @@ public class Rentals extends ArrayList<Rental> {
     public double totalAmount() {
         double totalAmount = 0;
         for (Rental rental : this) {
-            totalAmount += rental.amount();
+            totalAmount += rental.movie.amount(rental.getDaysRented());
         }
 
         return totalAmount;

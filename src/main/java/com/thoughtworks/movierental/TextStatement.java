@@ -15,7 +15,7 @@ class TextStatement {
 
     for (Rental rental : rentals) {
       result += "\t" + rental.getMovie().getTitle() + "\t" +
-          String.valueOf(rental.amount()) + "\n";
+          String.valueOf(rental.movie.amount(rental.getDaysRented())) + "\n";
     }
 
     //add footer lines result

@@ -18,7 +18,7 @@ class HtmlStatement {
     for (Rental rental : rentals) {
       // show figures for this rental
       result += rental.getMovie().getTitle() + ": <b>" +
-              String.valueOf(rental.amount()) + "</b>";
+              String.valueOf(rental.movie.amount(rental.getDaysRented())) + "</b>";
 
     }
     result += "</p>";
@@ -27,7 +27,6 @@ class HtmlStatement {
     result += "<p>Amount owed is <b>" + String.valueOf(rentals.totalAmount()) + "</b></p>";
     result += "<p>You earned <b>" + String.valueOf(rentals.totalFrequentRenterPoints())
             + "</b> frequent renter points</p>";
-
     return result;
   }
 }
